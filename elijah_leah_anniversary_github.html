@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Elijah and Leah's 4th-Month Anniversary</title>
+<style>
+body{margin:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;font-family:Arial;background:linear-gradient(135deg,#ffe6f0,#eadcff)}
+.card{width:90%;max-width:520px;padding:30px;text-align:center;border-radius:30px;background:#ffffff88;backdrop-filter:blur(12px);animation:in 1s;z-index:2;color:#6b3855}
+h1{color:#d45d8b;font-size:clamp(34px,10vw,55px)}
+button{padding:15px 28px;border:0;border-radius:30px;background:#d66b9d;color:white;font-size:17px}
+#surprise{display:none;margin-top:20px;padding:18px;background:#ffffffaa;border-radius:20px}
+.heart{position:fixed;bottom:-40px;animation:up 7s linear}
+@keyframes up{to{transform:translateY(-120vh) rotate(40deg);opacity:0}}
+@keyframes in{from{opacity:0;transform:scale(.8)}}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>Elijah and Leah's<br>4th-Month Anniversary 💕</h1>
+<p>Four months of love, laughter, and beautiful memories together. Thank you for making every moment special. ❤️</p>
+<button onclick="document.getElementById('surprise').style.display='block'">Open Surprise 💌</button>
+<div id="surprise">🌸 Surprise! 🌸<br><br>Here's to more smiles, adventures, and many more beautiful months together. 💕</div>
+</div>
+<script>
+setInterval(()=>{let h=document.createElement('div');h.className='heart';h.innerHTML='💗';h.style.left=Math.random()*100+'vw';h.style.fontSize=20+Math.random()*25+'px';document.body.appendChild(h);setTimeout(()=>h.remove(),7000)},450)
+</script>
+</body>
+</html>
