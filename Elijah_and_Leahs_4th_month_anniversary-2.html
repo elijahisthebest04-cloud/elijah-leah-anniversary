@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elijah and Leah's 4th-Month Anniversary 💕</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;overflow:hidden;
+ display:flex;align-items:center;justify-content:center;
+ padding:18px;font-family:system-ui,-apple-system,sans-serif;
+ background:linear-gradient(135deg,#ffe8f2,#eadcff);
+ color:#6b3855;
+}
+.card{
+ width:min(95vw,600px);padding:35px 25px;text-align:center;
+ border-radius:32px;background:rgba(255,255,255,.45);
+ backdrop-filter:blur(15px);
+ box-shadow:0 15px 45px rgba(120,60,100,.15);
+ animation:cardIn 1s cubic-bezier(.2,.8,.2,1);
+ z-index:2;
+}
+h1{
+ margin:10px 0;color:#d45d8b;
+ font-size:clamp(36px,10vw,65px);
+ animation:softGlow 3s infinite;
+}
+p{font-size:clamp(15px,4vw,18px);line-height:1.7}
+button{
+ border:0;border-radius:50px;padding:15px 28px;
+ font-size:17px;color:white;
+ background:linear-gradient(45deg,#e66c9d,#aa7be0);
+ transition:transform .25s ease;
+}
+button:active{transform:scale(.92)}
+#message{
+ display:none;margin-top:20px;padding:18px;
+ border-radius:20px;background:rgba(255,255,255,.7);
+ animation:pop .6s ease;
+}
+.heart{
+ position:fixed;bottom:-50px;
+ animation:rise linear forwards;
+ pointer-events:none;
+}
+@keyframes cardIn{
+ from{opacity:0;transform:translateY(40px) scale(.95)}
+ to{opacity:1;transform:none}
+}
+@keyframes softGlow{
+ 50%{transform:scale(1.04)}
+}
+@keyframes pop{
+ from{opacity:0;transform:scale(.5)}
+ to{opacity:1;transform:scale(1)}
+}
+@keyframes rise{
+ from{transform:translateY(0) rotate(0);opacity:0}
+ 10%{opacity:1}
+ to{transform:translateY(-120vh) rotate(35deg);opacity:0}
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+<div style="font-size:35px">💗</div>
+<h1>Elijah & Leah's<br>4th-Month Anniversary</h1>
+<h2>Happy Anniversary ✨</h2>
+
+<p>
+Four months of smiles, memories, and special moments together.
+Thank you for making every day brighter. 💕
+</p>
+
+<button onclick="openSurprise()">Open Surprise 💌</button>
+
+<div id="message">
+🌸 Surprise! 🌸<br><br>
+Elijah & Leah — here's to more laughter, more memories,
+and many more beautiful months together. 💖
+</div>
+</div>
+
+<script>
+function openSurprise(){
+ document.getElementById("message").style.display="block";
+}
+const hearts=["💗","💕","❤️","♡"];
+function makeHeart(){
+ const h=document.createElement("div");
+ h.className="heart";
+ h.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
+ h.style.left=Math.random()*100+"vw";
+ h.style.fontSize=18+Math.random()*25+"px";
+ h.style.animationDuration=5+Math.random()*5+"s";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),10000);
+}
+setInterval(makeHeart,450);
+</script>
+
+</body>
+</html>
