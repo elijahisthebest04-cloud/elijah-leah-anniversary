@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elijah & Leah's 4th-Month Anniversary 💕</title>
+<style>
+body{margin:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;font-family:Arial;background:linear-gradient(135deg,#ffe4ef,#eadcff);color:#6b3855}
+.card{width:90%;max-width:500px;padding:30px;text-align:center;border-radius:30px;background:#ffffff88;backdrop-filter:blur(10px);animation:show 1s}
+h1{color:#d45d8b;font-size:42px}
+button{padding:14px 25px;border:0;border-radius:30px;background:#d66b9d;color:white;font-size:16px}
+#surprise{display:none;margin-top:20px;padding:15px;background:#fff8;border-radius:20px}
+.heart{position:fixed;bottom:-30px;animation:up 6s linear}
+@keyframes up{to{transform:translateY(-110vh);opacity:0}}
+@keyframes show{from{opacity:0;transform:scale(.8)}}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>Elijah & Leah's<br>4th-Month Anniversary 💕</h1>
+<p>Four months of memories, laughter and beautiful moments together. Thank you for making every day special. ❤️</p>
+<button onclick="document.getElementById('surprise').style.display='block'">Open Surprise 💌</button>
+<div id="surprise">You are my favorite person. Here's to many more happy months together 💗</div>
+</div>
+<script>
+setInterval(()=>{let h=document.createElement('div');h.className='heart';h.innerHTML='💗';h.style.left=Math.random()*100+'%';document.body.appendChild(h);setTimeout(()=>h.remove(),6000)},500);
+</script>
+</body>
+</html>
